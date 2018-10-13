@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "ReactOS CJK Package"
-#define MyAppVersion "0.0"
+#define MyAppVersion "0.1"
 #define MyAppPublisher "ReactOS Team and Contributors"
 #define MyAppURL "https://reactos.org"
 
@@ -20,7 +20,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-LicenseFile=LICENSE-ALL.txt
+LicenseFile=LICENSE.txt
 OutputDir=.
 OutputBaseFilename=CJK-Package-Setup
 SetupIconFile=CJK-Package-Setup.ico
@@ -36,30 +36,19 @@ Name: "tw"; MessagesFile: "Languages\ChineseTraditional.isl"
 Name: "kr"; MessagesFile: "Languages\Korean.isl"
 
 [Files]
-Source: "build\subst-setup.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "LICENSE-ALL.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "fonts\HanaMinA.ttf"; DestDir: "{fonts}"; FontInstall: "HanaMinA"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\HanaMinB.ttf"; DestDir: "{fonts}"; FontInstall: "HanaMinB"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\ipag.ttf"; DestDir: "{fonts}"; FontInstall: "IPAGothic"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\ipagp.ttf"; DestDir: "{fonts}"; FontInstall: "IPAPGothic"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\ipam.ttf"; DestDir: "{fonts}"; FontInstall: "IPAMincho"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\ipamp.ttf"; DestDir: "{fonts}"; FontInstall: "IPAPMincho"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\SourceHanSansCN-Regular.otf"; DestDir: "{fonts}"; FontInstall: "Source Han Sans CN"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\SourceHanSansKR-Regular.otf"; DestDir: "{fonts}"; FontInstall: "Source Han Sans KR"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\SourceHanSansTW-Regular.otf"; DestDir: "{fonts}"; FontInstall: "Source Han Sans TW"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\SourceHanSerifCN-Regular.otf"; DestDir: "{fonts}"; FontInstall: "Source Han Serif CN"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\SourceHanSerifKR-Regular.otf"; DestDir: "{fonts}"; FontInstall: "Source Han Serif KR"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\SourceHanSerifTW-Regular.otf"; DestDir: "{fonts}"; FontInstall: "Source Han Serif TW"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\wqy-zenhei.ttc"; DestDir: "{fonts}"; FontInstall: "WenQuanYi Zen Hei & WenQuanYi Zen Hei Mono"; Flags: onlyifdoesntexist uninsneveruninstall
+Source: "font-setup.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "fonts\SourceHanSerif-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
+Source: "fonts\SourceHanSans-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{group}\ReactOS Homepage"; Filename: "{#MyAppURL}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
-Name: "{group}\LICENSE-ALL.txt"; Filename: "{app}\LICENSE-ALL.txt"
+Name: "{group}\LICENSE.txt"; Filename: "{app}\LICENSE.txt"
 
 [Run]
-Filename: "{app}\subst-setup.exe"; Parameters: "-i"
+Filename: "{app}\font-setup.exe"; Parameters: "-i"
 
 [UninstallRun]
-Filename: "{app}\subst-setup.exe"; Parameters: "-u"
+Filename: "{app}\font-setup.exe"; Parameters: "-u"

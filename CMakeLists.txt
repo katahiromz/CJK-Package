@@ -26,10 +26,10 @@ if (NOT uppercase_CMAKE_BUILD_TYPE MATCHES "^(DEBUG|RELEASE|RELWITHDEBINFO|MINSI
     message(FATAL_ERROR "Invalid value for CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 endif()
 
-# set output directory (build/)
-set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+## set output directory (build/)
+#set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
+#set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+#set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 # do statically link
 set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
@@ -63,7 +63,7 @@ ENABLE_LANGUAGE(RC)
 
 ##############################################################################
 
-add_executable(subst-setup WIN32 subst-setup)
-target_compile_definitions(subst-setup PRIVATE -DUNICODE -D_UNICODE)
+add_executable(font-setup WIN32 font-setup)
+target_compile_definitions(font-setup PRIVATE -DUNICODE -D_UNICODE)
 
 ##############################################################################

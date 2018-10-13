@@ -93,6 +93,8 @@ static const FONTSUBST CJK_MapForUninstall[] =
     { L"MS Shell Dlg",    L"Droid Sans Fallback" },
     { L"Tahoma",          L"Droid Sans Fallback" },
     { L"System",          L"Droid Sans Fallback" },
+    { L"Lucida Console",  L"DejaVu Sans Mono" },
+    { L"Terminal",        L"DejaVu Sans Mono" },
 
     // Simplified Chinese
     { L"SimSun",          L"Droid Sans Fallback" },

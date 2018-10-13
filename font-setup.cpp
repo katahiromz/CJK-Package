@@ -89,6 +89,11 @@ static const FONTSUBST CJK_MapForInstall[] =
 // map for uninstall 
 static const FONTSUBST CJK_MapForUninstall[] =
 {
+    { L"MS Sans Serif",   L"Droid Sans Fallback" },
+    { L"MS Shell Dlg",    L"Droid Sans Fallback" },
+    { L"Tahoma",          L"Droid Sans Fallback" },
+    { L"System",          L"Droid Sans Fallback" },
+
     // Simplified Chinese
     { L"SimSun",          L"Droid Sans Fallback" },
     { L"NSimSun",         L"Droid Sans Fallback" },
@@ -133,6 +138,36 @@ static const FONTSUBST CJK_MapForUninstall[] =
     { CTF_LocalName1,     L"Droid Sans Fallback" },
     { CTF_LocalName2,     L"Droid Sans Fallback" },
     { CTF_LocalName3,     L"Droid Sans Fallback" },
+};
+
+// language-specific
+static const FONTSUBST CJK_MapForInstallSimplifiedChinese[] =
+{
+    { L"MS Sans Serif",   L"Source Han Serif SC" },
+    { L"MS Shell Dlg",    L"Source Han Serif SC" },
+    { L"Tahoma",          L"Source Han Serif SC" },
+    { L"System",          L"Source Han Serif SC" },
+};
+static const FONTSUBST CJK_MapForInstallJapanese[] =
+{
+    { L"MS Sans Serif",   L"JF_SourceGothic" },
+    { L"MS Shell Dlg",    L"JF_SourceGothic" },
+    { L"Tahoma",          L"JF_SourceGothic" },
+    { L"System",          L"JF_SourceGothic" },
+};
+static const FONTSUBST CJK_MapForInstallKorean[] =
+{
+    { L"MS Sans Serif",   L"Source Han Serif K" },
+    { L"MS Shell Dlg",    L"Source Han Serif K" },
+    { L"Tahoma",          L"Source Han Serif K" },
+    { L"System",          L"Source Han Serif K" },
+};
+static const FONTSUBST CJK_MapForInstallTraditionalChinese[] =
+{
+    { L"MS Sans Serif",   L"Source Han Serif SC" },
+    { L"MS Shell Dlg",    L"Source Han Serif SC" },
+    { L"Tahoma",          L"Source Han Serif SC" },
+    { L"System",          L"Source Han Serif SC" },
 };
 
 // the list of all font files
@@ -193,17 +228,16 @@ LONG DoOpenKey(MRegKey& key)
         0, KEY_READ | KEY_WRITE);
 }
 
-LONG DoInstallSubst(void)
+LONG DoInstallSubst(const FONTSUBST *map, size_t count)
 {
     MRegKey key;
     LONG nError = DoOpenKey(key);
     if (nError)
         return nError;
 
-    size_t count = _countof(CJK_MapForInstall);
     for (size_t i = 0; i < count; ++i)
     {
-        const FONTSUBST& mapping = CJK_MapForInstall[i];
+        const FONTSUBST& mapping = map[i];
         LONG nError = DoSubst(key, &mapping);
         if (nError)
         {
@@ -211,6 +245,29 @@ LONG DoInstallSubst(void)
         }
     }
     return 0;
+}
+
+LONG DoInstallLanguageSpecificSubst(void)
+{
+    WORD wLangID = GetUserDefaultLangID();
+    switch (PRIMARYLANGID(wLangID))
+    {
+    case LANG_CHINESE:
+        if (SUBLANGID(wLangID) == SUBLANG_CHINESE_SIMPLIFIED)
+        {
+            return DoInstallSubst(CJK_MapForInstallSimplifiedChinese, _countof(CJK_MapForInstallSimplifiedChinese));
+        }
+        if (SUBLANGID(wLangID) == SUBLANG_CHINESE_TRADITIONAL)
+        {
+            return DoInstallSubst(CJK_MapForInstallTraditionalChinese, _countof(CJK_MapForInstallTraditionalChinese));
+        }
+        break;
+    case LANG_JAPANESE:
+        return DoInstallSubst(CJK_MapForInstallJapanese, _countof(CJK_MapForInstallJapanese));
+    case LANG_KOREAN:
+        return DoInstallSubst(CJK_MapForInstallKorean, _countof(CJK_MapForInstallKorean));
+    }
+    return -1;
 }
 
 LONG DoUninstallSubst(void)
@@ -261,7 +318,9 @@ WinMain(HINSTANCE   hInstance,
 
     if (lstrcmpiA(lpCmdLine, "-i") == 0)
     {
-        nError = DoInstallSubst();
+        nError = DoInstallSubst(CJK_MapForInstall, _countof(CJK_MapForInstall));
+        if (nError == 0)
+            nError = DoInstallLanguageSpecificSubst();
     }
     if (lstrcmpiA(lpCmdLine, "-u") == 0)
     {

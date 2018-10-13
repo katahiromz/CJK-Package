@@ -228,7 +228,7 @@ LONG DoOpenKey(MRegKey& key)
         0, KEY_READ | KEY_WRITE);
 }
 
-LONG DoInstallSubst(const FONTSUBST *map, size_t count)
+LONG DoSetupSubst(const FONTSUBST *map, size_t count)
 {
     MRegKey key;
     LONG nError = DoOpenKey(key);
@@ -255,17 +255,17 @@ LONG DoInstallLanguageSpecificSubst(void)
     case LANG_CHINESE:
         if (SUBLANGID(wLangID) == SUBLANG_CHINESE_SIMPLIFIED)
         {
-            return DoInstallSubst(CJK_MapForInstallSimplifiedChinese, _countof(CJK_MapForInstallSimplifiedChinese));
+            return DoSetupSubst(CJK_MapForInstallSimplifiedChinese, _countof(CJK_MapForInstallSimplifiedChinese));
         }
         if (SUBLANGID(wLangID) == SUBLANG_CHINESE_TRADITIONAL)
         {
-            return DoInstallSubst(CJK_MapForInstallTraditionalChinese, _countof(CJK_MapForInstallTraditionalChinese));
+            return DoSetupSubst(CJK_MapForInstallTraditionalChinese, _countof(CJK_MapForInstallTraditionalChinese));
         }
         break;
     case LANG_JAPANESE:
-        return DoInstallSubst(CJK_MapForInstallJapanese, _countof(CJK_MapForInstallJapanese));
+        return DoSetupSubst(CJK_MapForInstallJapanese, _countof(CJK_MapForInstallJapanese));
     case LANG_KOREAN:
-        return DoInstallSubst(CJK_MapForInstallKorean, _countof(CJK_MapForInstallKorean));
+        return DoSetupSubst(CJK_MapForInstallKorean, _countof(CJK_MapForInstallKorean));
     }
     return -1;
 }
@@ -318,13 +318,13 @@ WinMain(HINSTANCE   hInstance,
 
     if (lstrcmpiA(lpCmdLine, "-i") == 0)
     {
-        nError = DoInstallSubst(CJK_MapForInstall, _countof(CJK_MapForInstall));
+        nError = DoSetupSubst(CJK_MapForInstall, _countof(CJK_MapForInstall));
         if (nError == 0)
             nError = DoInstallLanguageSpecificSubst();
     }
     if (lstrcmpiA(lpCmdLine, "-u") == 0)
     {
-        nError = DoUninstallSubst();
+        nError = DoSetupSubst(CJK_MapForUninstall, _countof(CJK_MapForUninstall));
     }
     if (nError)
     {

@@ -147,6 +147,8 @@ static const FONTSUBST CJK_MapForInstallSimplifiedChinese[] =
     { L"MS Shell Dlg",    L"Source Han Serif SC" },
     { L"Tahoma",          L"Source Han Serif SC" },
     { L"System",          L"Source Han Serif SC" },
+    { L"Lucida Console",  L"Source Han Sans HW SC Regular" },
+    { L"Terminal",        L"Source Han Sans HW SC Regular" },
 };
 static const FONTSUBST CJK_MapForInstallJapanese[] =
 {
@@ -154,6 +156,8 @@ static const FONTSUBST CJK_MapForInstallJapanese[] =
     { L"MS Shell Dlg",    JF_SourceGothic },
     { L"Tahoma",          JF_SourceGothic },
     { L"System",          JF_SourceGothic },
+    { L"Lucida Console",  JF_SourceGothicHW },
+    { L"Terminal",        JF_SourceGothicHW },
 };
 static const FONTSUBST CJK_MapForInstallKorean[] =
 {
@@ -161,13 +165,17 @@ static const FONTSUBST CJK_MapForInstallKorean[] =
     { L"MS Shell Dlg",    L"Source Han Serif K" },
     { L"Tahoma",          L"Source Han Serif K" },
     { L"System",          L"Source Han Serif K" },
+    { L"Lucida Console",  L"Source Han Sans HW K Regular" },
+    { L"Terminal",        L"Source Han Sans HW K Regular" },
 };
 static const FONTSUBST CJK_MapForInstallTraditionalChinese[] =
 {
-    { L"MS Sans Serif",   L"Source Han Serif SC" },
-    { L"MS Shell Dlg",    L"Source Han Serif SC" },
-    { L"Tahoma",          L"Source Han Serif SC" },
-    { L"System",          L"Source Han Serif SC" },
+    { L"MS Sans Serif",   L"Source Han Serif TC" },
+    { L"MS Shell Dlg",    L"Source Han Serif TC" },
+    { L"Tahoma",          L"Source Han Serif TC" },
+    { L"System",          L"Source Han Serif TC" },
+    { L"Lucida Console",  L"Source Han Sans HW TC Regular" },
+    { L"Terminal",        L"Source Han Sans HW TC Regular" },
 };
 
 // the list of all font files

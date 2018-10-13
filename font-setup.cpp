@@ -150,10 +150,10 @@ static const FONTSUBST CJK_MapForInstallSimplifiedChinese[] =
 };
 static const FONTSUBST CJK_MapForInstallJapanese[] =
 {
-    { L"MS Sans Serif",   L"JF_SourceGothic" },
-    { L"MS Shell Dlg",    L"JF_SourceGothic" },
-    { L"Tahoma",          L"JF_SourceGothic" },
-    { L"System",          L"JF_SourceGothic" },
+    { L"MS Sans Serif",   JF_SourceGothic },
+    { L"MS Shell Dlg",    JF_SourceGothic },
+    { L"Tahoma",          JF_SourceGothic },
+    { L"System",          JF_SourceGothic },
 };
 static const FONTSUBST CJK_MapForInstallKorean[] =
 {

@@ -37,11 +37,11 @@ set(BUILD_SHARED_LIBRARIES OFF)
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     # using GCC
-    set(CMAKE_EXE_LINKER_FLAGS " -static -static-libgcc -static-libstdc++")
+    set(CMAKE_EXE_LINKER_FLAGS " -static -static-libgcc -static-libstdc++ -s")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     # using Clang
-    set(CMAKE_EXE_LINKER_FLAGS " -static")
-elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    set(CMAKE_EXE_LINKER_FLAGS " -static -s")
+elseif (MSVC)
     # using MSVC
     # replace "/MD" with "/MT" (building without runtime DLLs)
     set(CompilerFlags

@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "ReactOS CJK Package"
-#define MyAppVersion "0.1"
+#define MyAppVersion "0.2"
 #define MyAppPublisher "ReactOS Team and Contributors"
 #define MyAppURL "https://reactos.org"
 
@@ -20,7 +20,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-LicenseFile=LICENSE.txt
+LicenseFile=fonts\LICENSE_OFL.txt
 OutputDir=.
 OutputBaseFilename=CJK-Package-Setup
 SetupIconFile=CJK-Package-Setup.ico
@@ -37,15 +37,15 @@ Name: "kr"; MessagesFile: "Languages\Korean.isl"
 
 [Files]
 Source: "font-setup.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "fonts\SourceHanSerif-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\SourceHanSans-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
+Source: "fonts\LICENSE_OFL.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "fonts\NotoSerifCJK-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
+Source: "fonts\NotoSansCJK-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{group}\ReactOS Homepage"; Filename: "{#MyAppURL}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
-Name: "{group}\LICENSE.txt"; Filename: "{app}\LICENSE.txt"
+Name: "{group}\License"; Filename: "{app}\LICENSE_OFL.txt"
 
 [Run]
 Filename: "{app}\font-setup.exe"; Parameters: "-i"

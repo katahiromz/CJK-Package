@@ -1,6 +1,6 @@
 // font-setup.cpp
 // This file is public domain software.
-// Copyright (C) 2018 Katayama Hirofumi MZ <katayama.hirofumi.mz@gmail.com>
+// Copyright (C) 2018-2019 Katayama Hirofumi MZ <katayama.hirofumi.mz@gmail.com>
 #include "MRegKey.hpp"
 
 struct FONTSUBST
@@ -13,16 +13,13 @@ WCHAR CSF_LocalName0[] = {0x5B8B, 0x4F53, 0};                   // SimSun
 WCHAR CSF_LocalName1[] = {0x4E2D, 0x6613, 0x5B8B, 0x4F53, 0};   // SimSun
 WCHAR CSF_LocalName2[] = {0x65B0, 0x5B8B, 0x4F53, 0};           // NSimSun
 WCHAR CSF_LocalName3[] = {0xFC4B, 0x91CC, 0};                   // SimHei
-WCHAR CSF_LocalName4[] = {'M','S', 0x5B8B, 0x4F53, 0};         // MS Song
+WCHAR CSF_LocalName4[] = {'M','S', 0x5B8B, 0x4F53, 0};          // MS Song
 
 // Japanese
 WCHAR JF_LocalName0[] = {0xFF2D, 0xFF33, ' ', 0x660E, 0x671D, 0};                           // MS Mincho
 WCHAR JF_LocalName1[] = {0xFF2D, 0xFF33, ' ', 0xFF30, 0x660E, 0x671D, 0};                   // MS PMincho
 WCHAR JF_LocalName2[] = {0xFF2D, 0xFF33, ' ', 0x30B4, 0x30B7, 0x30C3, 0x30AF, 0};           // MS Gothic
 WCHAR JF_LocalName3[] = {0xFF2D, 0xFF33, ' ', 0xFF30, 0x30B4, 0x30B7, 0x30C3, 0x30AF, 0};   // MS PGothic
-WCHAR JF_SourceMincho[] = {0x6E90, 0x30CE, 0x660E, 0x671D, 0};   // 源ノ明朝
-WCHAR JF_SourceGothic[] = {0x6E90, 0x30CE, 0x89D2, 0x30B4, 0x30B7, 0x30C3, 0x30AF, ' ','R','e','g','u','l','a','r',0};   // 源ノ角ゴシック Regular
-WCHAR JF_SourceGothicHW[] = {0x6E90, 0x30CE, 0x89D2, 0x30B4, 0x30B7, 0x30C3, 0x30AF, ' ', 'H','W',' ','R','e','g','u','l','a','r', 0};   // 源ノ角ゴシック HW Regular
 
 // Korean
 WCHAR KF_LocalName0[] = {0xBC14, 0xD0D5, 0};            // Batang
@@ -41,49 +38,49 @@ WCHAR CTF_LocalName3[] = {0x83EF, 0x5EB7, 0x7C97, 0x660E, 0x9AD4, 0};   // DLCMi
 static const FONTSUBST CJK_MapForInstall[] =
 {
     // Simplified Chinese
-    { L"SimSun",          L"Source Han Serif SC" },
-    { L"NSimSun",         L"Source Han Serif SC" },
-    { L"SimHei",          L"Source Han Sans SC Regular" },
-    { L"MS Song",         L"Source Han Serif SC" },
-    { CSF_LocalName0,     L"Source Han Serif SC" },         // SimSun
-    { CSF_LocalName1,     L"Source Han Serif SC" },         // SimSun
-    { CSF_LocalName2,     L"Source Han Serif SC" },         // NSimSun
-    { CSF_LocalName3,     L"Source Han Sans SC Regular" },  // SimHei
-    { CSF_LocalName4,     L"Source Han Serif SC" },         // MS Song
+    { L"SimSun",          L"Noto Serif CJK SC" },
+    { L"NSimSun",         L"Noto Serif CJK SC" },
+    { L"SimHei",          L"Noto Sans CJK SC Regular" },
+    { L"MS Song",         L"Noto Serif CJK SC" },
+    { CSF_LocalName0,     L"Noto Serif CJK SC" },         // SimSun
+    { CSF_LocalName1,     L"Noto Serif CJK SC" },         // SimSun
+    { CSF_LocalName2,     L"Noto Serif CJK SC" },         // NSimSun
+    { CSF_LocalName3,     L"Noto Sans CJK SC Regular" },  // SimHei
+    { CSF_LocalName4,     L"Noto Serif CJK SC" },         // MS Song
 
     // Japanese
-    { L"MS UI Gothic",    JF_SourceGothic },
-    { L"MS Mincho",       JF_SourceGothicHW },
-    { L"MS PMincho",      JF_SourceMincho },
-    { L"MS Gothic",       JF_SourceGothicHW },
-    { L"MS PGothic",      JF_SourceGothic },
-    { JF_LocalName0,      JF_SourceGothicHW },          // MS Mincho
-    { JF_LocalName1,      JF_SourceMincho },            // MS PMincho
-    { JF_LocalName2,      JF_SourceGothicHW },          // MS Gothic
-    { JF_LocalName3,      JF_SourceGothic },            // MS PGothic
+    { L"MS UI Gothic",    L"Noto Sans CJK JP Regular" },
+    { L"MS Mincho",       L"Noto Sans Mono CJK JP Regular" },
+    { L"MS PMincho",      L"Noto Serif CJK JP" },
+    { L"MS Gothic",       L"Noto Sans Mono CJK JP Regular" },
+    { L"MS PGothic",      L"Noto Sans CJK JP Regular" },
+    { JF_LocalName0,      L"Noto Sans Mono CJK JP Regular" },    // MS Mincho
+    { JF_LocalName1,      L"Noto Serif CJK JP" },                // MS PMincho
+    { JF_LocalName2,      L"Noto Sans Mono CJK JP Regular" },    // MS Gothic
+    { JF_LocalName3,      L"Noto Sans CJK JP Regular" },         // MS PGothic
 
     // Korean
-    { L"Batang",          L"Source Han Serif K" },
-    { L"BatangChe",       L"Source Han Sans HW K Regular" },
-    { L"Gungsuh",         L"Source Han Sans K Regular" },
-    { L"GungsuhChe",      L"Source Han Sans HW K Regular" },
-    { L"Gulim",           L"Source Han Sans K Regular" },
-    { L"GulimChe",        L"Source Han Sans HW K Regular" },
-    { KF_LocalName0,      L"Source Han Serif K" },              // Batang
-    { KF_LocalName1,      L"Source Han Sans HW K Regular" },    // BatangChe
-    { KF_LocalName2,      L"Source Han Sans K Regular" },       // Gungsuh
-    { KF_LocalName3,      L"Source Han Sans HW K Regular" },    // GungsuhChe
-    { KF_LocalName4,      L"Source Han Sans K Regular" },       // Gulim
-    { KF_LocalName5,      L"Source Han Sans HW K Regular" },    // GulimChe
+    { L"Batang",          L"Noto Serif CJK KR" },
+    { L"BatangChe",       L"Noto Sans Mono CJK KR Regular" },
+    { L"Gungsuh",         L"Noto Sans CJK KR Regular" },
+    { L"GungsuhChe",      L"Noto Sans Mono CJK KR Regular" },
+    { L"Gulim",           L"Noto Sans CJK KR Regular" },
+    { L"GulimChe",        L"Noto Sans Mono CJK KR Regular" },
+    { KF_LocalName0,      L"Noto Serif CJK KR" },               // Batang
+    { KF_LocalName1,      L"Noto Sans Mono CJK KR Regular" },   // BatangChe
+    { KF_LocalName2,      L"Noto Sans CJK KR Regular" },        // Gungsuh
+    { KF_LocalName3,      L"Noto Sans Mono CJK KR Regular" },   // GungsuhChe
+    { KF_LocalName4,      L"Noto Sans CJK KR Regular" },        // Gulim
+    { KF_LocalName5,      L"Noto Sans Mono CJK KR Regular" },   // GulimChe
 
     // Traditional Chinese
-    { L"MingLiU",         L"Source Han Serif TC" },
-    { L"PMingLiU",        L"Source Han Serif TC" },
-    { L"Ming Light",      L"Source Han Serif TC" },
-    { CTF_LocalName0,     L"Source Han Serif TC" },         // MingLiU
-    { CTF_LocalName1,     L"Source Han Serif TC" },         // PMingLiU
-    { CTF_LocalName2,     L"Source Han Serif TC" },         // DLCMingMedium
-    { CTF_LocalName3,     L"Source Han Serif TC" },         // DLCMingBold
+    { L"MingLiU",         L"Noto Serif CJK TC" },
+    { L"PMingLiU",        L"Noto Serif CJK TC" },
+    { L"Ming Light",      L"Noto Serif CJK TC" },
+    { CTF_LocalName0,     L"Noto Serif CJK TC" },         // MingLiU
+    { CTF_LocalName1,     L"Noto Serif CJK TC" },         // PMingLiU
+    { CTF_LocalName2,     L"Noto Serif CJK TC" },         // DLCMingMedium
+    { CTF_LocalName3,     L"Noto Serif CJK TC" },         // DLCMingBold
 };
 
 // map for uninstall 
@@ -145,46 +142,46 @@ static const FONTSUBST CJK_MapForUninstall[] =
 // language-specific
 static const FONTSUBST CJK_MapForInstallSimplifiedChinese[] =
 {
-    { L"MS Sans Serif",   L"Source Han Serif SC" },
-    { L"MS Shell Dlg",    L"Source Han Serif SC" },
-    { L"Tahoma",          L"Source Han Serif SC" },
-    { L"System",          L"Source Han Serif SC" },
-    { L"Lucida Console",  L"Source Han Sans HW SC Regular" },
-    { L"Terminal",        L"Source Han Sans HW SC Regular" },
+    { L"MS Sans Serif",   L"Noto Serif CJK SC" },
+    { L"MS Shell Dlg",    L"Noto Serif CJK SC" },
+    { L"Tahoma",          L"Noto Serif CJK SC" },
+    { L"System",          L"Noto Serif CJK SC" },
+    { L"Lucida Console",  L"Noto Sans Mono CJK SC Regular" },
+    { L"Terminal",        L"Noto Sans Mono CJK SC Regular" },
 };
 static const FONTSUBST CJK_MapForInstallJapanese[] =
 {
-    { L"MS Sans Serif",   JF_SourceGothic },
-    { L"MS Shell Dlg",    JF_SourceGothic },
-    { L"Tahoma",          JF_SourceGothic },
-    { L"System",          JF_SourceGothic },
-    { L"Lucida Console",  JF_SourceGothicHW },
-    { L"Terminal",        JF_SourceGothicHW },
+    { L"MS Sans Serif",   L"Noto Sans CJK JP Regular" },
+    { L"MS Shell Dlg",    L"Noto Sans CJK JP Regular" },
+    { L"Tahoma",          L"Noto Sans CJK JP Regular" },
+    { L"System",          L"Noto Sans CJK JP Regular" },
+    { L"Lucida Console",  L"Noto Sans Mono CJK JP Regular" },
+    { L"Terminal",        L"Noto Sans Mono CJK JP Regular" },
 };
 static const FONTSUBST CJK_MapForInstallKorean[] =
 {
-    { L"MS Sans Serif",   L"Source Han Serif K" },
-    { L"MS Shell Dlg",    L"Source Han Serif K" },
-    { L"Tahoma",          L"Source Han Serif K" },
-    { L"System",          L"Source Han Serif K" },
-    { L"Lucida Console",  L"Source Han Sans HW K Regular" },
-    { L"Terminal",        L"Source Han Sans HW K Regular" },
+    { L"MS Sans Serif",   L"Noto Serif CJK KR" },
+    { L"MS Shell Dlg",    L"Noto Serif CJK KR" },
+    { L"Tahoma",          L"Noto Serif CJK KR" },
+    { L"System",          L"Noto Serif CJK KR" },
+    { L"Lucida Console",  L"Noto Sans Mono CJK KR Regular" },
+    { L"Terminal",        L"Noto Sans Mono CJK KR Regular" },
 };
 static const FONTSUBST CJK_MapForInstallTraditionalChinese[] =
 {
-    { L"MS Sans Serif",   L"Source Han Serif TC" },
-    { L"MS Shell Dlg",    L"Source Han Serif TC" },
-    { L"Tahoma",          L"Source Han Serif TC" },
-    { L"System",          L"Source Han Serif TC" },
-    { L"Lucida Console",  L"Source Han Sans HW TC Regular" },
-    { L"Terminal",        L"Source Han Sans HW TC Regular" },
+    { L"MS Sans Serif",   L"Noto Serif CJK TC" },
+    { L"MS Shell Dlg",    L"Noto Serif CJK TC" },
+    { L"Tahoma",          L"Noto Serif CJK TC" },
+    { L"System",          L"Noto Serif CJK TC" },
+    { L"Lucida Console",  L"Noto Sans Mono CJK TC Regular" },
+    { L"Terminal",        L"Noto Sans Mono CJK TC Regular" },
 };
 
 // the list of all font files
 static const LPCWSTR FontFiles[] =
 {
-    L"SourceHanSerif-Regular.ttc",
-    L"SourceHanSans-Regular.ttc"
+    L"NotoSerifCJK-Regular.ttc",
+    L"NotoSansCJK-Regular.ttc"
 };
 
 BOOL DoFont(LPCWSTR pszName, BOOL bUninstall)

@@ -27,5 +27,5 @@ TMP1.$$$
 *.opensdf
 ipch
 7z.*
-CJK-Package-Setup.exe
+CJK-Package-Setup*.exe
 font-setup.exe

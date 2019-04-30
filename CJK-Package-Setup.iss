@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "ReactOS CJK Package"
-#define MyAppVersion "0.2"
+#define MyAppVersion "0.3"
 #define MyAppPublisher "ReactOS Team and Contributors"
 #define MyAppURL "https://reactos.org"
 
@@ -22,7 +22,7 @@ DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 LicenseFile=fonts\LICENSE_OFL.txt
 OutputDir=.
-OutputBaseFilename=CJK-Package-Setup-0.2
+OutputBaseFilename=CJK-Package-Setup-{#MyAppVersion}
 SetupIconFile=CJK-Package-Setup.ico
 Compression=lzma
 SolidCompression=yes

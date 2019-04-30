@@ -259,6 +259,7 @@ LONG DoInstallLanguageSpecificSubst(void)
     WORD wLangID = GetUserDefaultLangID();
     switch (PRIMARYLANGID(wLangID))
     {
+    default:
     case LANG_CHINESE:
         if (SUBLANGID(wLangID) == SUBLANG_CHINESE_SIMPLIFIED)
         {

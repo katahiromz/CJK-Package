@@ -259,7 +259,6 @@ LONG DoInstallLanguageSpecificSubst(void)
     WORD wLangID = GetUserDefaultLangID();
     switch (PRIMARYLANGID(wLangID))
     {
-    default:
     case LANG_CHINESE:
         if (SUBLANGID(wLangID) == SUBLANG_CHINESE_SIMPLIFIED)
         {
@@ -274,6 +273,8 @@ LONG DoInstallLanguageSpecificSubst(void)
         return DoSetupSubst(CJK_MapForInstallJapanese, _countof(CJK_MapForInstallJapanese));
     case LANG_KOREAN:
         return DoSetupSubst(CJK_MapForInstallKorean, _countof(CJK_MapForInstallKorean));
+    default:
+        return ERROR_SUCCESS;
     }
     return -1;
 }

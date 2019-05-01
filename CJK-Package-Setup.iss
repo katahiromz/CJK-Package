@@ -20,7 +20,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-LicenseFile=fonts\LICENSE_OFL.txt
+LicenseFile=fonts\LICENSE.txt
 OutputDir=.
 OutputBaseFilename=CJK-Package-Setup-{#MyAppVersion}
 SetupIconFile=CJK-Package-Setup.ico
@@ -37,15 +37,16 @@ Name: "kr"; MessagesFile: "Languages\Korean.isl"
 
 [Files]
 Source: "font-setup.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "fonts\LICENSE_OFL.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "fonts\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "fonts\NotoSerifCJK-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
 Source: "fonts\NotoSansCJK-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
+Source: "fonts\unifont-12.0.01.ttf"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{group}\ReactOS Homepage"; Filename: "{#MyAppURL}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
-Name: "{group}\License"; Filename: "{app}\LICENSE_OFL.txt"
+Name: "{group}\License"; Filename: "{app}\LICENSE.txt"
 
 [Run]
 Filename: "{app}\font-setup.exe"; Parameters: "-i"

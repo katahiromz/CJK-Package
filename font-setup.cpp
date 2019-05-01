@@ -38,61 +38,54 @@ WCHAR CTF_LocalName3[] = {0x83EF, 0x5EB7, 0x7C97, 0x660E, 0x9AD4, 0};   // DLCMi
 static const FONTSUBST CJK_MapForInstall[] =
 {
     // Simplified Chinese
-    { L"SimSun",          L"Noto Serif CJK SC" },
+    { L"SimSun",          L"Unifont" },                         // MUST BE MONO
     { L"NSimSun",         L"Noto Serif CJK SC" },
-    { L"SimHei",          L"Noto Sans CJK SC Regular" },
-    { L"MS Song",         L"Noto Serif CJK SC" },
-    { CSF_LocalName0,     L"Noto Serif CJK SC" },         // SimSun
-    { CSF_LocalName1,     L"Noto Serif CJK SC" },         // SimSun
-    { CSF_LocalName2,     L"Noto Serif CJK SC" },         // NSimSun
-    { CSF_LocalName3,     L"Noto Sans CJK SC Regular" },  // SimHei
-    { CSF_LocalName4,     L"Noto Serif CJK SC" },         // MS Song
+    { L"SimHei",          L"Unifont" },                         // MUST BE MONO
+    { L"MS Song",         L"Unifont" },                         // MUST BE MONO
+    { CSF_LocalName0,     L"Unifont" },                         // same as SimSun
+    { CSF_LocalName1,     L"Unifont" },                         // same as SimSun
+    { CSF_LocalName2,     L"Noto Serif CJK SC" },               // same as NSimSun
+    { CSF_LocalName3,     L"Unifont" },                         // same as SimHei
+    { CSF_LocalName4,     L"Unifont" },                         // same as MS Song
 
     // Japanese
     { L"MS UI Gothic",    L"Noto Sans CJK JP Regular" },
-    { L"MS Mincho",       L"Noto Sans Mono CJK JP Regular" },
+    { L"MS Mincho",       L"Noto Sans Mono CJK JP Regular" },   // MUST BE MONO
+    { L"MS Gothic",       L"Noto Sans Mono CJK JP Regular" },   // MUST BE MONO
     { L"MS PMincho",      L"Noto Serif CJK JP" },
-    { L"MS Gothic",       L"Noto Sans Mono CJK JP Regular" },
     { L"MS PGothic",      L"Noto Sans CJK JP Regular" },
-    { JF_LocalName0,      L"Noto Sans Mono CJK JP Regular" },    // MS Mincho
-    { JF_LocalName1,      L"Noto Serif CJK JP" },                // MS PMincho
-    { JF_LocalName2,      L"Noto Sans Mono CJK JP Regular" },    // MS Gothic
-    { JF_LocalName3,      L"Noto Sans CJK JP Regular" },         // MS PGothic
+    { JF_LocalName0,      L"Noto Sans Mono CJK JP Regular" },   // same as MS Mincho
+    { JF_LocalName2,      L"Noto Sans Mono CJK JP Regular" },   // same as MS Gothic
+    { JF_LocalName1,      L"Noto Serif CJK JP" },               // same as MS PMincho
+    { JF_LocalName3,      L"Noto Sans CJK JP Regular" },        // same as MS PGothic
 
     // Korean
     { L"Batang",          L"Noto Serif CJK KR" },
-    { L"BatangChe",       L"Noto Sans Mono CJK KR Regular" },
-    { L"Gungsuh",         L"Noto Sans CJK KR Regular" },
-    { L"GungsuhChe",      L"Noto Sans Mono CJK KR Regular" },
+    { L"BatangChe",       L"Noto Sans Mono CJK KR Regular" },   // MUST BE MONO
+    { L"Gungsuh",         L"Noto Serif CJK KR" },
+    { L"GungsuhChe",      L"Noto Sans Mono CJK KR Regular" },   // MUST BE MONO
     { L"Gulim",           L"Noto Sans CJK KR Regular" },
-    { L"GulimChe",        L"Noto Sans Mono CJK KR Regular" },
-    { KF_LocalName0,      L"Noto Serif CJK KR" },               // Batang
-    { KF_LocalName1,      L"Noto Sans Mono CJK KR Regular" },   // BatangChe
-    { KF_LocalName2,      L"Noto Sans CJK KR Regular" },        // Gungsuh
-    { KF_LocalName3,      L"Noto Sans Mono CJK KR Regular" },   // GungsuhChe
-    { KF_LocalName4,      L"Noto Sans CJK KR Regular" },        // Gulim
-    { KF_LocalName5,      L"Noto Sans Mono CJK KR Regular" },   // GulimChe
+    { L"GulimChe",        L"Noto Sans Mono CJK KR Regular" },   // MUST BE MONO
+    { KF_LocalName0,      L"Noto Serif CJK KR" },               // same as Batang
+    { KF_LocalName1,      L"Noto Sans Mono CJK KR Regular" },   // same as BatangChe
+    { KF_LocalName2,      L"Noto Serif CJK KR" },               // same as Gungsuh
+    { KF_LocalName3,      L"Noto Sans Mono CJK KR Regular" },   // same as GungsuhChe
+    { KF_LocalName4,      L"Noto Sans CJK KR Regular" },        // same as Gulim
+    { KF_LocalName5,      L"Noto Sans Mono CJK KR Regular" },   // same as GulimChe
 
     // Traditional Chinese
-    { L"MingLiU",         L"Noto Serif CJK TC" },
+    { L"MingLiU",         L"Unifont" },                         // MUST BE MONO
     { L"PMingLiU",        L"Noto Serif CJK TC" },
-    { L"Ming Light",      L"Noto Serif CJK TC" },
-    { CTF_LocalName0,     L"Noto Serif CJK TC" },         // MingLiU
-    { CTF_LocalName1,     L"Noto Serif CJK TC" },         // PMingLiU
-    { CTF_LocalName2,     L"Noto Serif CJK TC" },         // DLCMingMedium
-    { CTF_LocalName3,     L"Noto Serif CJK TC" },         // DLCMingBold
+    { L"Ming Light",      L"Unifont" },                         // MUST BE MONO
+    { CTF_LocalName0,     L"Unifont" },                         // same as MingLiU
+    { CTF_LocalName1,     L"Noto Serif CJK TC" },               // same as PMingLiU
+    { CTF_LocalName2,     L"Unifont" },                         // same as DLCMingMedium
+    { CTF_LocalName3,     L"Unifont" },                         // same as DLCMingBold
 };
 
 // map for uninstall 
 static const FONTSUBST CJK_MapForUninstall[] =
 {
-    { L"MS Sans Serif",   L"Droid Sans Fallback" },
-    { L"MS Shell Dlg",    L"Droid Sans Fallback" },
-    { L"Tahoma",          L"Droid Sans Fallback" },
-    { L"System",          L"Droid Sans Fallback" },
-    { L"Lucida Console",  L"DejaVu Sans Mono" },
-    { L"Terminal",        L"DejaVu Sans Mono" },
-
     // Simplified Chinese
     { L"SimSun",          L"Droid Sans Fallback" },
     { L"NSimSun",         L"Droid Sans Fallback" },
@@ -148,6 +141,7 @@ static const FONTSUBST CJK_MapForInstallSimplifiedChinese[] =
     { L"System",          L"Noto Serif CJK SC" },
     { L"Lucida Console",  L"Noto Sans Mono CJK SC Regular" },
     { L"Terminal",        L"Noto Sans Mono CJK SC Regular" },
+    { L"Microsoft Sans Serif",   L"Noto Sans CJK SC Regular" },
 };
 static const FONTSUBST CJK_MapForInstallJapanese[] =
 {
@@ -157,6 +151,7 @@ static const FONTSUBST CJK_MapForInstallJapanese[] =
     { L"System",          L"Noto Sans CJK JP Regular" },
     { L"Lucida Console",  L"Noto Sans Mono CJK JP Regular" },
     { L"Terminal",        L"Noto Sans Mono CJK JP Regular" },
+    { L"Microsoft Sans Serif",   L"Noto Sans CJK JP Regular" },
 };
 static const FONTSUBST CJK_MapForInstallKorean[] =
 {
@@ -166,6 +161,7 @@ static const FONTSUBST CJK_MapForInstallKorean[] =
     { L"System",          L"Noto Serif CJK KR" },
     { L"Lucida Console",  L"Noto Sans Mono CJK KR Regular" },
     { L"Terminal",        L"Noto Sans Mono CJK KR Regular" },
+    { L"Microsoft Sans Serif",   L"Noto Sans CJK KR Regular" },
 };
 static const FONTSUBST CJK_MapForInstallTraditionalChinese[] =
 {
@@ -175,13 +171,76 @@ static const FONTSUBST CJK_MapForInstallTraditionalChinese[] =
     { L"System",          L"Noto Serif CJK TC" },
     { L"Lucida Console",  L"Noto Sans Mono CJK TC Regular" },
     { L"Terminal",        L"Noto Sans Mono CJK TC Regular" },
+    { L"Microsoft Sans Serif",   L"Noto Sans CJK TC Regular" },
+};
+static const FONTSUBST CJK_MapForInstallNonCJK[] =
+{
+    { L"MS Sans Serif",   L"Tahoma" },
+    { L"MS Shell Dlg",    L"Tahoma" },
+    { L"Tahoma",          L"Tahoma" },
+    { L"System",          L"FreeSans" },
+    { L"Lucida Console",  L"DejaVu Sans Mono" },
+    { L"Terminal",        L"DejaVu Sans Mono" },
+    { L"Microsoft Sans Serif",   L"Tahoma" },
+};
+
+static const FONTSUBST CJK_MapForUninstallSimplifiedChinese[] =
+{
+    { L"MS Sans Serif",   L"Droid Sans Fallback" },
+    { L"MS Shell Dlg",    L"Droid Sans Fallback" },
+    { L"Tahoma",          L"Droid Sans Fallback" },
+    { L"System",          L"Droid Sans Fallback" },
+    { L"Lucida Console",  L"DejaVu Sans Mono" },
+    { L"Terminal",        L"DejaVu Sans Mono" },
+    { L"Microsoft Sans Serif",  L"Droid Sans Fallback" },
+};
+static const FONTSUBST CJK_MapForUninstallJapanese[] =
+{
+    { L"MS Sans Serif",   L"Droid Sans Fallback" },
+    { L"MS Shell Dlg",    L"Droid Sans Fallback" },
+    { L"Tahoma",          L"Droid Sans Fallback" },
+    { L"System",          L"Droid Sans Fallback" },
+    { L"Lucida Console",  L"DejaVu Sans Mono" },
+    { L"Terminal",        L"DejaVu Sans Mono" },
+    { L"Microsoft Sans Serif",  L"Droid Sans Fallback" },
+};
+static const FONTSUBST CJK_MapForUninstallKorean[] =
+{
+    { L"MS Sans Serif",   L"Droid Sans Fallback" },
+    { L"MS Shell Dlg",    L"Droid Sans Fallback" },
+    { L"Tahoma",          L"Droid Sans Fallback" },
+    { L"System",          L"Droid Sans Fallback" },
+    { L"Lucida Console",  L"DejaVu Sans Mono" },
+    { L"Terminal",        L"DejaVu Sans Mono" },
+    { L"Microsoft Sans Serif",  L"Droid Sans Fallback" },
+};
+static const FONTSUBST CJK_MapForUninstallTraditionalChinese[] =
+{
+    { L"MS Sans Serif",   L"Droid Sans Fallback" },
+    { L"MS Shell Dlg",    L"Droid Sans Fallback" },
+    { L"Tahoma",          L"Droid Sans Fallback" },
+    { L"System",          L"Droid Sans Fallback" },
+    { L"Lucida Console",  L"DejaVu Sans Mono" },
+    { L"Terminal",        L"DejaVu Sans Mono" },
+    { L"Microsoft Sans Serif",  L"Droid Sans Fallback" },
+};
+static const FONTSUBST CJK_MapForUninstallNonCJK[] =
+{
+    { L"MS Sans Serif",         L"Tahoma" },
+    { L"MS Shell Dlg",          L"Tahoma" },
+    { L"Tahoma",                L"Tahoma" },
+    { L"System",                L"FreeSans" },
+    { L"Lucida Console",        L"DejaVu Sans Mono" },
+    { L"Terminal",              L"DejaVu Sans Mono" },
+    { L"Microsoft Sans Serif",  L"Tahoma" },
 };
 
 // the list of all font files
 static const LPCWSTR FontFiles[] =
 {
     L"NotoSerifCJK-Regular.ttc",
-    L"NotoSansCJK-Regular.ttc"
+    L"NotoSansCJK-Regular.ttc",
+    L"unifont-12.0.01.ttf"
 };
 
 BOOL DoFont(LPCWSTR pszName, BOOL bUninstall)
@@ -227,7 +286,7 @@ LONG DoSubst(MRegKey& key, const FONTSUBST *subst)
     return key.SetSz(subst->from, subst->to);
 }
 
-LONG DoOpenKey(MRegKey& key)
+LONG DoOpenKeyForSubst(MRegKey& key)
 {
     return key.RegOpenKeyEx(
         HKEY_LOCAL_MACHINE,
@@ -238,7 +297,7 @@ LONG DoOpenKey(MRegKey& key)
 LONG DoSetupSubst(const FONTSUBST *map, size_t count)
 {
     MRegKey key;
-    LONG nError = DoOpenKey(key);
+    LONG nError = DoOpenKeyForSubst(key);
     if (nError)
         return nError;
 
@@ -268,13 +327,13 @@ LONG DoInstallLanguageSpecificSubst(void)
         {
             return DoSetupSubst(CJK_MapForInstallTraditionalChinese, _countof(CJK_MapForInstallTraditionalChinese));
         }
-        break;
+        // FALL THROUGH
+    default:
+        return DoSetupSubst(CJK_MapForInstallNonCJK, _countof(CJK_MapForInstallNonCJK));
     case LANG_JAPANESE:
         return DoSetupSubst(CJK_MapForInstallJapanese, _countof(CJK_MapForInstallJapanese));
     case LANG_KOREAN:
         return DoSetupSubst(CJK_MapForInstallKorean, _countof(CJK_MapForInstallKorean));
-    default:
-        return ERROR_SUCCESS;
     }
     return -1;
 }
@@ -283,7 +342,7 @@ LONG DoUninstallSubst(void)
 {
     MRegKey key;
 
-    LONG nError = DoOpenKey(key);
+    LONG nError = DoOpenKeyForSubst(key);
     if (nError)
         return nError;
 
@@ -298,6 +357,67 @@ LONG DoUninstallSubst(void)
         }
     }
     return 0;
+}
+
+LONG DoUninstallLanguageSpecificSubst(void)
+{
+    WORD wLangID = GetUserDefaultLangID();
+    switch (PRIMARYLANGID(wLangID))
+    {
+    case LANG_CHINESE:
+        if (SUBLANGID(wLangID) == SUBLANG_CHINESE_SIMPLIFIED)
+        {
+            return DoSetupSubst(CJK_MapForUninstallSimplifiedChinese, _countof(CJK_MapForUninstallSimplifiedChinese));
+        }
+        if (SUBLANGID(wLangID) == SUBLANG_CHINESE_TRADITIONAL)
+        {
+            return DoSetupSubst(CJK_MapForUninstallTraditionalChinese, _countof(CJK_MapForUninstallTraditionalChinese));
+        }
+        // FALL THROUGH
+    default:
+        return DoSetupSubst(CJK_MapForUninstallNonCJK, _countof(CJK_MapForUninstallNonCJK));
+    case LANG_JAPANESE:
+        return DoSetupSubst(CJK_MapForUninstallJapanese, _countof(CJK_MapForUninstallJapanese));
+    case LANG_KOREAN:
+        return DoSetupSubst(CJK_MapForUninstallKorean, _countof(CJK_MapForUninstallKorean));
+    }
+    return -1;
+}
+
+LONG DoOpenKeyForConsole(MRegKey& key)
+{
+    return key.RegOpenKeyEx(
+        HKEY_LOCAL_MACHINE,
+        TEXT("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Console\\TrueTypeFont"),
+        0, KEY_READ | KEY_WRITE);
+}
+
+LONG DoInstallConsoleFont(void)
+{
+    MRegKey key;
+    LONG ret = DoOpenKeyForConsole(key);
+    if (ret)
+        return ret;
+
+    key.SetSz(L"936", L"Unifont");
+    key.SetSz(L"950", L"Unifont");
+    key.SetSz(L"932", L"MS Gothic");
+    key.SetSz(L"949", L"GulimChe");
+    return ERROR_SUCCESS;
+}
+
+LONG DoUninstallConsoleFont(void)
+{
+    MRegKey key;
+    LONG ret = DoOpenKeyForConsole(key);
+    if (ret)
+        return ret;
+
+    key.RegDeleteValue(L"936");
+    key.RegDeleteValue(L"950");
+    key.RegDeleteValue(L"932");
+    key.RegDeleteValue(L"949");
+    return ERROR_SUCCESS;
 }
 
 extern "C"
@@ -330,10 +450,16 @@ WinMain(HINSTANCE   hInstance,
         nError = DoSetupSubst(CJK_MapForInstall, _countof(CJK_MapForInstall));
         if (nError == 0)
             nError = DoInstallLanguageSpecificSubst();
+        if (nError == 0)
+            nError = DoInstallConsoleFont();
     }
     if (lstrcmpiA(lpCmdLine, "-u") == 0)
     {
         nError = DoSetupSubst(CJK_MapForUninstall, _countof(CJK_MapForUninstall));
+        if (nError == 0)
+            nError = DoUninstallLanguageSpecificSubst();
+        if (nError == 0)
+            nError = DoUninstallConsoleFont();
     }
     if (nError)
     {

@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "ReactOS CJK Package"
-#define MyAppVersion "0.5"
+#define MyAppVersion "0.6"
 #define MyAppPublisher "ReactOS Team and Contributors"
 #define MyAppURL "https://reactos.org"
 
@@ -40,7 +40,7 @@ Source: "font-setup.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "fonts\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "fonts\NotoSerifCJK-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
 Source: "fonts\NotoSansCJK-Regular.ttc"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
-Source: "fonts\unifont-12.0.01.ttf"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
+Source: "fonts\unifont-12.0.01-monospaced.ttf"; DestDir: "{fonts}"; Flags: onlyifdoesntexist uninsneveruninstall
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

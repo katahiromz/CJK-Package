@@ -12,10 +12,10 @@ They are available at https://www.google.com/get/noto/help/cjk/ .
 
 The font file:
 
-    unifont-12.0.01.ttf (Unifont)
+    unifont-12.0.01-monospaced.ttf (Unifont)
 
 is licensed under GNU GENERAL PUBLIC LICENSE Version 2.
-Unifont is available at http://unifoundry.com/unifont.html .
+Original Unifont is available at http://unifoundry.com/unifont.html .
 
 ---------------------------------------------------------------------------
                     GNU GENERAL PUBLIC LICENSE

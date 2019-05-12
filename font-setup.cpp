@@ -240,7 +240,7 @@ static const LPCWSTR FontFiles[] =
 {
     L"NotoSerifCJK-Regular.ttc",
     L"NotoSansCJK-Regular.ttc",
-    L"unifont-12.0.01.ttf"
+    L"unifont-12.0.01-monospaced.ttf"
 };
 
 BOOL DoFont(LPCWSTR pszName, BOOL bUninstall)

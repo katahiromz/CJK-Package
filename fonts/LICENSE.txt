@@ -17,6 +17,9 @@ The font file:
 is licensed under GNU GENERAL PUBLIC LICENSE Version 2.
 Original Unifont is available at http://unifoundry.com/unifont.html .
 
+I modified PANOSE width and charsets of Unifont.
+Its charsets are restricted to CJK and Thai and Vietnam.
+
 ---------------------------------------------------------------------------
                     GNU GENERAL PUBLIC LICENSE
                        Version 2, June 1991
